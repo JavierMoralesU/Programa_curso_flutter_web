@@ -14,74 +14,86 @@ class MainApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
         useMaterial3: true,
         textTheme: GoogleFonts.anaheimTextTheme(),
       ),
       home: Scaffold(
-        body: Row(
-          children: [
-            Column(
-              //mainaxis alinea verticalmente
-              // mainAxisAlignment: MainAxisAlignment.center,
-              //crossaxis alinea horizontalmente
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                botton(Icons.book, 'Projects', () {}),
-                botton(Icons.draw, 'Draft', () {}),
-                botton(Icons.switch_access_shortcut_outlined, 'Shared whit me',
-                    () {}),
-                const Spacer(),
-                botton(Icons.settings, 'Settings', () {}),
-                botton(Icons.people, 'Invite members', () {}),
-                botton(Icons.add, 'New Draft', () {}),
-                botton(Icons.add, 'New Project', () {}),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  const Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'Side Hustle',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ),
-                      ),
-                      SizedBox(width: 20),
-                      Icon(
-                        Icons.keyboard_arrow_down_rounded,
-                        size: 35,
-                      ),
-                      SizedBox(width: 800),
-                      Icon(Icons.link),
-                      SizedBox(width: 20),
-                      Text('Share'),
-                      SizedBox(width: 20),
-                      Icon(Icons.more_vert),
-                      //
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      nota(),
-                      const SizedBox(width: 40),
-                      nota(),
-                      const SizedBox(width: 40),
-                      nota(),
-                      const SizedBox(width: 40),
-                      nota(),
-                    ],
-                  ),
-                ],
+        body: Container(
+
+          color: Color(0xfffcf0a4),
+          child: Row(
+            children: 
+            [
+              Container(
+                color: Color.fromARGB(255, 213, 156, 115),
+                child: Column(
+                  //mainaxis alinea verticalmente
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  //crossaxis alinea horizontalmente
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    botton(Icons.book, 'Projectos', () {}),
+                    botton(Icons.draw, 'Borradores', () {}),
+                    botton(Icons.switch_access_shortcut_outlined, 'Compartidos',
+                        () {}),
+                    const Spacer(),
+                    botton(Icons.settings, 'Opciones', () {}),
+                    botton(Icons.people, 'Invitar miembros', () {}),
+                    botton(Icons.add, 'Nuevo borrador', () {}),
+                    botton(Icons.folder, 'Nuevo proyecto', () {}),
+                  ],
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column
+                (
+                  children: 
+                  [
+                    const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: 
+                      [
+                        Text(
+                          'Side Hustle',
+                          style: TextStyle(
+                            fontSize: 35,
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Icon(
+                          Icons.keyboard_arrow_down_rounded,
+                          size: 35,
+                        ),
+                        SizedBox(width: 800),
+                        Icon(Icons.link),
+                        SizedBox(width: 20),
+                        Text('Compartir'),
+                        SizedBox(width: 20),
+                        Icon(Icons.more_vert),
+                        //
+                      ],
+                    ),
+                    SizedBox(height: 60),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        nota(),
+                        const SizedBox(width: 40),
+                        nota(),
+                        const SizedBox(width: 40),
+                        nota(),
+                        const SizedBox(width: 40),
+                        nota(),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -90,7 +102,7 @@ class MainApp extends StatelessWidget {
   nota() {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey[200],
+        color: Colors.lightBlue[200],
         borderRadius: BorderRadius.circular(10),
       ),
       padding: const EdgeInsets.all(20),
@@ -106,12 +118,12 @@ class MainApp extends StatelessWidget {
                 height: 15,
                 width: 15,
                 decoration: const BoxDecoration(
-                  color: Colors.red,
+                  color: Colors.blue,
                   shape: BoxShape.circle,
                 ),
               ),
               const SizedBox(width: 10),
-              const Text('Titulo x'),
+              const Text('Targeta x'),
             ],
           ),
           const SizedBox(height: 20),
@@ -120,32 +132,52 @@ class MainApp extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec odio nec nisl sodales fermentum. Nullam nec nisl sodales, fermentum nisl nec, fermentum nisl. Nullam nec nisl sodales, fermentum nisl nec, fermentum nisl.'),
+                    'Texto de relleno: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nisl'),
               ),
             ),
           ),
           const SizedBox(height: 20),
           Row(
-            children: [
-              Expanded(
+            children: 
+            [
+              SizedBox(
+                width: 60,
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(Colors.grey[100]),
-                    shape: WidgetStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
+                  backgroundColor: WidgetStateProperty.all(Colors.green[300]),
+                  shape: WidgetStateProperty.all(
+                    RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  child: Text(
-                    'Edit',
-                    style: TextStyle(
-                      color: Colors.grey[700],
-                    ),
                   ),
+                  child: const Icon(Icons.edit, color: Colors.black),
                 ),
-              ),
+                ),
+              const SizedBox(width: 20),
+                SizedBox
+                (
+                width: 60,
+                child: ElevatedButton
+                (
+                  onPressed: () {},
+                  style: ButtonStyle(
+                  backgroundColor: WidgetStateProperty.all(Colors.red[300]),
+                  shape: WidgetStateProperty.all(
+                    RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  ),
+                  child: 
+                      const Icon(Icons.delete, color: Colors.black),
+                      
+
+                   
+                ),
+                ),
+
             ],
           ),
         ],
@@ -162,10 +194,14 @@ class MainApp extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(20),
         child: Row(
-          children: [
+          children: 
+          [
             Icon(icon),
             const SizedBox(width: 10),
-            Text(text),
+            Text(
+              text,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
           ],
         ),
       ),
